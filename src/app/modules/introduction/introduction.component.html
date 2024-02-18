@@ -15,5 +15,6 @@
         <div class="w-[50px] h-[50px]" *ngFor="let color of squaresLeft[index]" [style.background-color]="color"></div>
     </div>
     <div class="pb-10"></div>
-    <p class="falling" *ngFor="let index of indexFalling" [style.color]="indexColor[index]"> {{ indexShape[index] == 0 ? "N" : "🜲" }}</p>
+    <p class="falling space-mono-bold" *ngFor="let index of indexFalling" [style.color]="indexColor[index]"> {{
+        indexShape[index] == 0 ? "N" : "🜲" }}</p>
 </div>

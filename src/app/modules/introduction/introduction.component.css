@@ -3,7 +3,6 @@
     top: -2vh;
     font-size: 1.5rem;
     line-height: 2rem;
-    font-family: SpaceMono-Bold;
     opacity: 100%;
     animation: fall 4s linear infinite;
 }
