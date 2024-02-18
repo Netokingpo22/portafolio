@@ -1,0 +1,77 @@
+.falling {
+    position: absolute;
+    top: -2vh;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-family: SpaceMono-Bold;
+    opacity: 100%;
+    animation: fall 4s linear infinite;
+}
+
+@keyframes fall {
+
+    80% {
+        opacity: 100%;
+    }
+
+    100% {
+        transform: translateY(98vh);
+        opacity: 0%;
+    }
+}
+
+.falling:nth-of-type(1) {
+    left: 1%;
+    top: -2vh;
+    animation-delay: 3s;
+    animation-duration: 7s;
+}
+
+.falling:nth-of-type(2) {
+    left: 15%;
+    top: -3vh;
+    animation-delay: 1s;
+    animation-duration: 3s;
+}
+
+.falling:nth-of-type(3) {
+    left: 30%;
+    top: -2vh;
+    animation-delay: 2s;
+    animation-duration: 4s;
+}
+
+.falling:nth-of-type(4) {
+    left: 45%;
+    top: -4vh;
+    animation-delay: 5s;
+    animation-duration: 4s;
+}
+
+.falling:nth-of-type(5) {
+    left: 60%;
+    top: -8vh;
+    animation-delay: 2s;
+    animation-duration: 5s;
+}
+
+.falling:nth-of-type(6) {
+    left: 75%;
+    top: -2vh;
+    animation-delay: 0s;
+    animation-duration: 4s;
+}
+
+.falling:nth-of-type(7) {
+    left: 90%;
+    top: -3vh;
+    animation-delay: 1s;
+    animation-duration: 4s;
+}
+
+.falling:nth-of-type(8) {
+    left: 96%;
+    top: -5vh;
+    animation-delay: 3s;
+    animation-duration: 3s;
+}

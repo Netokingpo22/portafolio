@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'SpaceMono-Regular';
+    src: url('./assets/fonts/spaceMono/SpaceMono-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'SpaceMono-Bold';
+    src: url('./assets/fonts/spaceMono/SpaceMono-Bold.ttf');
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #4d4949;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #332e2e;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #1a1617;
+}
