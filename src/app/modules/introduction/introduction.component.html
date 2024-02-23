@@ -1,20 +1,18 @@
-<div class="flex flex-col items-center justify-center text-[#F2E6EA] bg-[#1A1617] h-screen">
-    <div class="pt-10"></div>
-    <div class="flex w-4/5 justify-end" *ngFor="let index of indexSquaresRight">
-        <div class="w-[50px] h-[50px]" *ngFor="let color of squaresRight[index]" [style.background-color]="color"></div>
+<div class="flex flex-col items-center justify-center w-full h-screen text-[#F2E6EA] bg-[#1A1617]">
+    <div class="pt-2"></div>
+    <div class="flex w-11/12 justify-end" *ngFor="let index of indexSquaresRight">
+        <div class="w-[20px] h-[20px]" *ngFor="let color of squaresRight[index]" [style.background-color]="color"></div>
     </div>
-    <div class="text-center text-2xl py-10 space-mono-regular">
+    <div class="text-center text-xs py-20 m-20 space-mono-regular border border-[#F2E6EA] w-5/6 index2 bg-[#1A1617]">
         <div class="flex flex-row items-center justify-center">
-            <p>Hola, soy&nbsp;</p>
-            <p class="text-[#CC527A] space-mono-bold">Ernesto Zazueta</p>
-            <p>.</p>
+            <p>Hola, soy <span class="text-[#CC527A] space-mono-bold">Ernesto Zazueta</span></p>
         </div>
         <p>Soy un desarrollador back-end jr.</p>
     </div>
-    <div class="flex w-4/5 justify-start" *ngFor="let index of indexSquaresLeft">
-        <div class="w-[50px] h-[50px]" *ngFor="let color of squaresLeft[index]" [style.background-color]="color"></div>
+    <div class="flex w-11/12 justify-start" *ngFor="let index of indexSquaresLeft">
+        <div class="w-[20px] h-[20px]" *ngFor="let color of squaresLeft[index]" [style.background-color]="color"></div>
     </div>
-    <div class="pb-10"></div>
+    <div class="pb-2"></div>
     <p class="falling space-mono-bold" *ngFor="let index of indexFalling" [style.color]="indexColor[index]"> {{
         indexShape[index] == 0 ? "N" : "🜲" }}</p>
 </div>
