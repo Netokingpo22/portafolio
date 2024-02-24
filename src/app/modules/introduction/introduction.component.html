@@ -5,14 +5,14 @@
     </div>
     <div class="text-center text-xs py-20 m-20 space-mono-regular border border-[#F2E6EA] w-5/6 index2 bg-[#1A1617]">
         <div class="flex flex-row items-center justify-center">
-            <p>Hola, soy <span class="text-[#CC527A] space-mono-bold">Ernesto Zazueta</span></p>
+            <p>{{text[0]}} <span class="text-[#CC527A] space-mono-bold">Ernesto Zazueta</span></p>
         </div>
-        <p>Soy un desarrollador back-end jr.</p>
+        <p>{{text[1]}}</p>
     </div>
     <div class="flex w-11/12 justify-start" *ngFor="let index of indexSquaresLeft">
         <div class="w-[20px] h-[20px]" *ngFor="let color of squaresLeft[index]" [style.background-color]="color"></div>
     </div>
     <div class="pb-2"></div>
-    <p class="falling space-mono-bold" *ngFor="let index of indexFalling" [style.color]="indexColor[index]"> {{
-        indexShape[index] == 0 ? "N" : "🜲" }}</p>
+    <p class="falling space-mono-bold" *ngFor="let index of indexFalling" [style.color]="indexColor[index]">
+        {{ indexShape[index] == 0 ? "N" : "🜲" }}</p>
 </div>
