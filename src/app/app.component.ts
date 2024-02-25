@@ -5,11 +5,12 @@ import { IntroductionComponent } from './modules/introduction/introduction.compo
 import { ExperienceComponent } from './modules/experience/experience.component'
 import { TitleComponent } from './modules/title/title.component'
 import { SkillsComponent } from './modules/skills/skills.component'
+import { ButtonsComponent } from './modules/buttons/buttons.component'
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, IntroductionComponent, ExperienceComponent, TitleComponent, SkillsComponent],
+  imports: [RouterOutlet, IntroductionComponent, ExperienceComponent, TitleComponent, SkillsComponent, ButtonsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

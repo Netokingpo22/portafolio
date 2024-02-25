@@ -9,7 +9,8 @@ import { LanguageService } from '../../services/language.service';
   styleUrl: './title.component.css'
 })
 export class TitleComponent implements OnInit {
-  @Input() title: String[] = [""];
+  @Input() title: string[] = [""];
+  @Input() titleColor: string = "bg-[#F2E6EA]";
   language: number = 0;
   constructor(private languageService: LanguageService) { }
   ngOnInit(): void {
