@@ -1,5 +1,6 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-buttons',
@@ -9,25 +10,22 @@ import { LanguageService } from '../../services/language.service';
   styleUrl: './buttons.component.css'
 })
 export class ButtonsComponent implements OnInit {
-  language: number = 0;
+  constructor(private languageService: LanguageService) { }
+  private subscription: Subscription = new Subscription();
   buttonText: string = "";
-  constructor(private languageService: LanguageService) {
-   }
   ngOnInit(): void {
-    this.language = this.languageService.getlanguage();
-    if (this.language == 0) {
-      this.buttonText = 'es';
-    }
-    this.buttonText = 'en';
+    this.subscription = this.languageService.getlanguage().subscribe(language => {
+      this.buttonText = language;
+    });
   }
 
   setLanguage() {
     if (this.buttonText == 'es') {
       this.languageService.setlanguage("en");
-      this.buttonText= 'en';
+      this.buttonText = 'en';
       return;
     }
     this.languageService.setlanguage("es");
-    this.buttonText= 'es';
+    this.buttonText = 'es';
   }
 }

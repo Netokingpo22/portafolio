@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LanguageService } from '../../services/language.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-introduction',
@@ -9,17 +10,21 @@ import { LanguageService } from '../../services/language.service';
   templateUrl: './introduction.component.html',
   styleUrl: './introduction.component.css'
 })
-export class IntroductionComponent implements OnInit {
-  language: number = 0;
+export class IntroductionComponent implements OnInit, OnDestroy {
   constructor(private languageService: LanguageService) { }
+  private subscription: Subscription = new Subscription();
   text: string[] = [""];
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
   ngOnInit(): void {
-    this.language = this.languageService.getlanguage();
-    if (this.language == 0) {
-      this.text = ['Hola, soy', "Soy un desarrollador back-end jr."];
-      return;
-    }
-    this.text = ["Hello, i'm", "I'm a junior back-end developer."];
+    this.subscription = this.languageService.getlanguage().subscribe(language => {
+      if (language == 'es') {
+        this.text = ['Hola, soy', "Soy un desarrollador back-end jr."];
+        return;
+      }
+      this.text = ["Hello, i'm", "I'm a junior back-end developer."];
+    });
   }
   squaresRight = [
     ['#F2E6EA', '#1A1617', '#F2E6EA', '#F2E6EA', '#F2E6EA'],
